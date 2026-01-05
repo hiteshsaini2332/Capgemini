@@ -1,4 +1,4 @@
-package programmingpractice.Lab_2;
+package programmingpractice.lab2;
 
 import java.util.Scanner;
 
