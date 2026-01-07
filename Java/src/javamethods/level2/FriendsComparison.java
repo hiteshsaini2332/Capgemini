@@ -1,0 +1,57 @@
+package javamethods.level2;
+
+import java.util.Scanner;
+
+public class FriendsComparison {
+
+    static String[] names = {"Amar", "Akbar", "Anthony"};
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int[] ages = new int[3];
+        double[] heights = new double[3];
+
+
+        for (int i = 0; i < 3; i++) {
+            System.out.print("Enter age of " + names[i] + ": ");
+            ages[i] = sc.nextInt();
+        }
+
+
+        for (int i = 0; i < 3; i++) {
+            System.out.print("Enter height of " + names[i] + " (in cm): ");
+            heights[i] = sc.nextDouble();
+        }
+
+        String youngest = findYoungest(ages);
+        String tallest = findTallest(heights);
+
+        System.out.println("\nYoungest friend is: " + youngest);
+        System.out.println("Tallest friend is: " + tallest);
+    }
+
+    static String findYoungest(int[] ages) {
+        int minIndex = 0;
+
+        for (int i = 1; i < ages.length; i++) {
+            if (ages[i] < ages[minIndex]) {
+                minIndex = i;
+            }
+        }
+        return names[minIndex];
+    }
+
+    static String findTallest(double[] heights) {
+        int maxIndex = 0;
+
+        for (int i = 1; i < heights.length; i++) {
+            if (heights[i] > heights[maxIndex]) {
+                maxIndex = i;
+            }
+        }
+        return names[maxIndex];
+    }
+}
+
