@@ -1,0 +1,25 @@
+package stringbuffer;
+
+public class PerformanceTest {
+     static void main(String[] args) {
+        long startTime, endTime;
+
+        // Testing StringBuilder Performance
+        startTime = System.nanoTime();
+        StringBuilder sb = new StringBuilder("Java");
+        for (int i = 0; i < 1000000; i++) {
+            sb.append(" Java");
+        }
+        endTime = System.nanoTime();
+        System.out.println("StringBuilder Time: " + (endTime - startTime) + " ns");
+
+        // Testing StringBuffer Performance
+        startTime = System.nanoTime();
+        StringBuffer sbf = new StringBuffer("Java");
+        for (int i = 0; i < 1000000; i++) {
+            sbf.append(" Java");
+        }
+        endTime = System.nanoTime();
+        System.out.println("StringBuffer Time: " + (endTime - startTime) + " ns");
+    }
+}
